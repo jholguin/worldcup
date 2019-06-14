@@ -32,6 +32,8 @@ const currentGames = async () => {
             }
         })
     })
+    
+    process.exit()
 }
 
 currentGames()
