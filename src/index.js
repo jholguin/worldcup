@@ -19,6 +19,7 @@ const currentGames = async () => {
         const test = database.child(item.getMatchId())
         test.set({
             id: item.getMatchId(),
+            time: item.getMatchTime(),
             homeTeam: {
                 score: item.getHomeTeam().getScore(),
                 name: item.getHomeTeam().getShortName(),

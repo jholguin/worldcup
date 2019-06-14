@@ -1,8 +1,13 @@
+import dotenv from 'dotenv'
+dotenv.config()
 import admin from 'firebase-admin'
-import serviceAccount from '../serviceAccount.json'
 
 admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
+    credential: admin.credential.cert({
+        projectId: process.env.FIREBASE_PROJECTID,
+        clientEmail: process.env.FIREBASE_CLIENTEMAIL,
+        privateKey: process.env.FIREBASE_PRIVATEKEY.replace(/\\n/g, '\n')
+    }),
     databaseURL: "https://worldcup2018-99b44.firebaseio.com/"
 })
 
