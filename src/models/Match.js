@@ -1,23 +1,28 @@
-import Team from './Team'
+import Team from "./Team"
+import moment from "moment"
 
 class Match {
     constructor(matchObject) {
         this.match = matchObject
     }
 
-    getMatchId () {
+    getDate() {
+        return moment(this.match.Date).format("MM-DD-YYYY")
+    }
+
+    getMatchId() {
         return this.match.IdMatch
     }
 
-    getHomeTeam () {
-        return new Team(this.match.HomeTeam)
+    getHomeTeam() {
+        return this.match.Home && new Team(this.match.Home)
     }
 
-    getAwayTeam () {
-        return new Team(this.match.AwayTeam)
+    getAwayTeam() {
+        return this.match.Away && new Team(this.match.Away)
     }
 
-    getMatchTime () {
+    getMatchTime() {
         return this.match.MatchTime
     }
 }

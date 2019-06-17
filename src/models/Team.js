@@ -1,25 +1,25 @@
 class Team {
-    constructor(teamObject){
+    constructor(teamObject) {
         this.team = teamObject
     }
 
-    getID () {
+    getID() {
         return this.team.IdTeam
     }
 
-    getName () {
+    getName() {
         return this.team.TeamName[0].Description
     }
 
-    getShortName () {
+    getShortName() {
         return this.team.Abbreviation
     }
 
-    getScore () {
-        return this.team.Score
+    getScore() {
+        return this.team && this.team.Score
     }
 
-    getFlag () {
+    getFlag() {
         return this.team.PictureUrl
     }
 }
