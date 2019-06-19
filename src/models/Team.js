@@ -3,23 +3,23 @@ class Team {
         this.team = teamObject
     }
 
-    getID() {
+    get ID() {
         return this.team.IdTeam
     }
 
-    getName() {
+    get name() {
         return this.team.TeamName[0].Description
     }
 
-    getShortName() {
-        return this.team.Abbreviation
+    get shortName() {
+        return this.team.IdCountry
     }
 
-    getScore() {
-        return this.team && this.team.Score
+    get score() {
+        return this.team.Score ? this.team.Score : 0
     }
 
-    getFlag() {
+    get flag() {
         return this.team.PictureUrl
     }
 }

@@ -6,11 +6,11 @@ class Match {
         this.match = matchObject
     }
 
-    getDate() {
+    get date() {
         return moment(this.match.Date).format("MM-DD-YYYY")
     }
 
-    getMatchId() {
+    get matchId() {
         return this.match.IdMatch
     }
 
@@ -22,7 +22,7 @@ class Match {
         return this.match.Away && new Team(this.match.Away)
     }
 
-    getMatchTime() {
+    get matchTime() {
         return this.match.MatchTime
     }
 }
