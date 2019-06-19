@@ -10,6 +10,10 @@ class Match {
         return moment(this.match.Date).format("MM-DD-YYYY")
     }
 
+    get startTime() {
+        return moment(this.match.Date).format("hh:mm A")
+    }
+
     get matchId() {
         return this.match.IdMatch
     }

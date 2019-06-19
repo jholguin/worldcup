@@ -26,6 +26,7 @@ const currentGames = async () => {
         test.set({
             id: item.matchId,
             time: item.matchTime,
+            startTime: item.startTime,
             homeTeam: item.getHomeTeam() && {
                 score: item.getHomeTeam().score,
                 name: item.getHomeTeam().shortName,
